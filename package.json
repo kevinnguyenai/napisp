@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "producer": "node ./app/producer.js"
   },
   "engines": {
     "node": ">=6"

@@ -7,11 +7,17 @@ const bluebird = require('bluebird')
 
 const config = require('./config')
 const routes = require('./routes')
-
 const app = express()
 
+// connect to Mongodb
 mongoose.Promise = bluebird
-mongoose.connect(config.mongo.url)
+mongoose.connect(config.mongo.url, {useNewUrlParser: true})
+
+// startup kafka connector
+const producer = require('./app/producer')
+producer()
+  .catch(console.error)
+  .then(console.log('successful'))
 
 app.use(helmet())
 app.use(bodyParser.urlencoded({ extended: true }))
