@@ -20,7 +20,7 @@ producer.setValueSerializer(function (v) {
 
 producer.connect(null, function () {
   producer.produce('napisp', null, {
-    message: JSON.stringify('{"name": "tuanna47", "comment": "system alright"}')
+    message: JSON.stringify('{"name": "tuanna47", "comment": "system alright"}', Date.now())
   }, null, Date.now(), function (err, offset) {
     // The offset if our acknowledgement level allows us to receive delivery offsets
     setImmediate(function () {

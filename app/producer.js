@@ -24,6 +24,7 @@ const partitionCount = 1 // all message to partition 0
 
 const producer = new NProducer(producerConfiguration, null, partitionCount)
 
+/* sample Promise base Producer
 const ProducerStartup = async () => {
   producer.on('error', error => console.error(error))
   await producer.connect()
@@ -36,5 +37,6 @@ const ProducerStartup = async () => {
     })().catch(console.error))
 
 }
-ProducerStartup().catch(console.error)
-module.exports = ProducerStartup
+ */
+
+module.exports = producer

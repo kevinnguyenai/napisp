@@ -1,6 +1,6 @@
 const Producer = require('../../lib/producer')
-const producerFacade = require('./facade')
+const producerState = require('../../app/producer')
 
 class ProducerProducer extends Producer {}
 
-module.exports = new ProducerProducer(producerFacade)
+module.exports = new ProducerProducer(producerState)

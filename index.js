@@ -13,12 +13,6 @@ const app = express()
 mongoose.Promise = bluebird
 mongoose.connect(config.mongo.url, {useNewUrlParser: true})
 
-// startup kafka connector
-const producer = require('./app/producer')
-producer()
-  .catch(console.error)
-  .then(console.log('successful'))
-
 app.use(helmet())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
