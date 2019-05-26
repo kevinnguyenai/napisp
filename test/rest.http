@@ -1,0 +1,22 @@
+GET http://localhost:8080/producer
+###
+POST http://localhost:8080/producer/request HTTP/1.1
+User-Agent: rest-client
+Accept-Language: en-GB,en-US;q=0.8,en;q=0.6,zh-CN;q=0.4
+Content-Type: application/json
+
+{
+    "AlertPlan": "Hệ Thống Access",
+    "KeyWord": "ACCESS_CARRIER",
+    "DedicateHostPlanning": "210.245.0.226",
+    "HostName": "INF-BGG-BGGP02901HW57-20.131.21.50",
+    "EventID": 28201023,
+    "ObjectID": 103916,
+    "Output": "WARNING-PORTDOWNNODESC (administratively down): XGigabitEthernet0/1/4#, speed 10 Mb",
+    "ServiceName": "check_interface_huawei: 13",
+    "HostState": "None",
+    "ServiceState": "warning",
+    "EventDateTime": "2019-04-12T16:58:00"
+}
+
+###
