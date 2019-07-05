@@ -5,7 +5,6 @@ const router = new Router()
 
 router.route('/')
   .get((...args) => controller.find(...args))
-  .post((...args) => controller.create(...args))
 /*
 router.route('/:id')
   .put((...args) => controller.update(...args))
@@ -13,10 +12,7 @@ router.route('/:id')
   .delete((...args) => controller.remove(...args))
 */
 
-router.route('/test')
-  .get((...args) => producer.test(...args))
-
-router.route('/getinfo')
-  .get((...args) => producer.getinfo(...args))
+router.route('/request')
+  .post((...args) => producer.request(...args))
 
 module.exports = router

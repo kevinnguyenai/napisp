@@ -22,8 +22,8 @@ function setup () {
   return function middleware (req, res, next) {
     if (req.method === 'POST') {
       let reqpayload = req.body
-      let data = Object.assign({}, reqpayload, {time: `${new Date()}`, uuid: `${uuid.v4()}`})
-      // producer.send('napisp', JSON.stringify(data), 0, 0, '0')
+      let data = Object.assign({}, reqpayload, {time: `${new Date().toTimeString()}`, uuid: `${uuid.v4()}`})
+      producer.send('napisp', JSON.stringify(data), 0, 0, '0')
       req.body = data
       res.set('x-request-id', data.uuid)
     }

@@ -7,6 +7,7 @@ const bluebird = require('bluebird')
 
 const config = require('./config')
 const routes = require('./routes')
+const kafkaproducer = require('./middleware/middleware').kafkaproducer
 const app = express()
 
 // connect to Mongodb
@@ -17,7 +18,7 @@ app.use(helmet())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(morgan('tiny'))
-
+app.use(kafkaproducer())
 app.use('/', routes)
 
 app.listen(config.server.port, () => {
