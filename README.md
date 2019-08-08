@@ -44,6 +44,18 @@ sudo docker run \
 
 
 --------------------------------------------------------------------------------
+### NEED NODEJS 8:
+- install nodejs8
+  sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  sudo apt-get install gcc g++ make
+  sudo apt-get install -y build-essential
+- install yarn
+  curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  sudo apt-get update && sudo apt-get install yarn
+- install nodejs8 from source
+  wget https://deb.nodesource.com/node_8.x/pool/main/n/nodejs/nodejs_8.16.0-1nodesource1_amd64.deb
+  dpkg -i nodejs_8.16.0-1nodesource1_amd64.deb
 ### STARTING DEMO 
 - Change file ```config.js``` bind to your kafka cluster , mongodb , redis infastructure 
 - Start producer service following by running ```npm run start```
